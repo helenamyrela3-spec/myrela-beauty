@@ -2,6 +2,16 @@
 <html lang="pt-BR">
 <head>
 
+  <!-- Google tag (gtag.js) — GA4 + Google Ads direto (fallback caso GTM falhe) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDTMRDVJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KDTMRDVJ');
+  gtag('config', 'AW-11131646037');
+</script>
+
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -19,13 +29,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="Studio de beleza premium em Maceió com 2 unidades: Ponta Verde e Barro Duro. Especialistas em extensão de cílios, brow lamination, nail design e cabelo. +500 clientes atendidas. Agende pelo WhatsApp!">
 <meta name="keywords" content="salão de beleza maceió, extensão de cílios maceió, brow lamination maceió, design de sobrancelhas maceió, nail designer maceió, maquiagem profissional maceió, escova progressiva maceió, salão ponta verde maceió, salão barro duro maceió">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://helenamyrela3-spec.github.io/myrela-beleza/">
+<link rel="canonical" href="https://studiomyrelabeauty.com.br/">
 
 <!-- OPEN GRAPH -->
 <meta property="og:title" content="Myrela Beauty | Studio Premium em Maceió">
 <meta property="og:description" content="Especialistas em cílios, brows, unhas e cabelo em Maceió. 2 unidades. Agende agora!">
 <meta property="og:type" content="business.business">
-<meta property="og:url" content="https://helenamyrela3-spec.github.io/myrela-beleza/">
+<meta property="og:url" content="https://studiomyrelabeauty.com.br/">
 <meta property="og:locale" content="pt_BR">
 
 <!-- STRUCTURED DATA - LOCAL BUSINESS -->
@@ -34,8 +44,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "@context": "https://schema.org",
   "@type": "BeautySalon",
   "name": "Myrela Beauty Studio",
-  "image": "https://helenamyrela3-spec.github.io/myrela-beleza/IMG_8717.jpeg",
-  "url": "https://helenamyrela3-spec.github.io/myrela-beleza/",
+  "image": "https://studiomyrelabeauty.com.br/IMG_8717.jpeg",
+  "url": "https://studiomyrelabeauty.com.br/",
   "telephone": "+5582996809247",
   "address": {
     "@type": "PostalAddress",
@@ -703,21 +713,26 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 
 // WhatsApp conversion tracking
 function trackWA(location) {
+  // GA4 event
   if(typeof gtag !== 'undefined') {
-    gtag('event','whatsapp_click',{event_category:'conversion',event_label:location,value:1});
+    gtag('event', 'whatsapp_click', {
+      event_category: 'conversion',
+      event_label: location,
+      value: 1
+    });
+    // Google Ads conversion com label correto
+    gtag('event', 'conversion', {
+      'send_to': 'AW-11131646037/jm4ACIXn6rkcENXg_bsp',
+      'value': 1.0,
+      'currency': 'BRL'
+    });
   }
+  // GTM dataLayer
   if(typeof dataLayer !== 'undefined') {
-    dataLayer.push({event:'whatsapp_click',click_location:location});
+    dataLayer.push({event: 'whatsapp_click', click_location: location});
   }
 }
 
-// Google Ads conversion
-function gtag_report_conversion() {
-  if(typeof gtag !== 'undefined') {
-    gtag('event','conversion',{'send_to':'AW-11131646037'});
-  }
-  return true;
-}
 </script>
 </body>
 </html>
